@@ -1,4 +1,4 @@
-import express, { Router } from "express";
+import express from "express";
 import {
   changeBookingStatus,
   checkAvailabilityOfCar,
@@ -14,6 +14,6 @@ bookingRouter.post("/check-availability", checkAvailabilityOfCar);
 bookingRouter.post("/create", protect, createBooking);
 bookingRouter.get("/user", protect, getUserBookings);
 bookingRouter.get("/owner", protect, getOwnerBookings);
-bookingRouter.get("/change-status", protect, changeBookingStatus);
+bookingRouter.post("/change-status", protect, changeBookingStatus);
 
 export default bookingRouter;
